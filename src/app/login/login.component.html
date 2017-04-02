@@ -1,0 +1,12 @@
+<div class="form">
+  <div class="thumbnail"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/169963/hat.svg"/></div>
+ 
+  <form autocomplete="off" novalidate class="login-form" [formGroup]="form">
+    <input type="text" placeholder="Email" formControlName="email" required/>
+    <input type="password" placeholder="Password"  formControlName="password" required/>
+    <button  (click)="login()">Login</button>
+   
+  </form>
+
+  
+</div>

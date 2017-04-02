@@ -1,0 +1,97 @@
+ <button style="padding-bottom: 5px;" type="button" class="btn btn-warning" (click)="open()"><i class="fa fa-user-plus" aria-hidden="true"></i> Add</button>
+   <br/>
+     <modal #modal  >
+        <modal-header [show-close]="true">
+            <h4 class="modal-title">Adauga student</h4>
+        </modal-header>
+        <modal-body>
+            <form [formGroup]="addStudent" autocomplete="off" novalidate>
+              <div class="form-group">
+                <label  for="">Nume</label>
+                <input class="form-control" type="text" formControlName="nume"/>
+              </div>
+              <div class="form-group">
+                <label for="">Prenume</label>
+                <input class="form-control" type="text" formControlName="prenume"/>
+              </div>
+              <div class="form-group">
+                <label  for="">Email</label>
+                <input class="form-control" type="text" formControlName="email"/>
+              </div>
+              <div class="form-group">
+                <label for="">Telefon</label>
+                <input class="form-control" type="text" formControlName="telefon"/>
+              </div>
+              <div class="form-group">
+                <label for="">Medie</label>
+                <input class="form-control" type="text" formControlName="medie"/>
+              </div>
+              <div class="form-group">
+                <label  for="">Tip invatamant</label>
+                <input class="form-control" type="text" formControlName="tip_invatamant"/>
+              </div>
+              <div class="form-group">
+                <label for="an">An</label>
+                 <select class="form-control" id="an" formControlName="an">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label  for="grupa">Grupa</label>
+               <select class="form-control" id="grupa" formControlName="grupa">
+                  <option value="1">1A</option>
+                  <option value="2">2A</option>
+                  <option value="3">3A</option>
+                </select>
+              </div>
+
+
+
+            </form>
+
+          
+           
+        </modal-body>
+        <modal-footer>
+          <button (click)="addSt()" class="btn btn-success"><i class="fa fa-plus" aria-hidden="true"></i> Adauga</button>
+          <button (click)="modal.close()" class="btn btn-default"><i class="fa fa-times-circle-o" aria-hidden="true"></i> Close</button>
+        </modal-footer>
+    </modal>
+
+
+     <table  class="table table-striped">
+       <thead>
+            <tr class="info">
+                <th>Nume</th>
+                <th>Prenume</th>
+                <th>Email</th>
+                
+                <th>Medie</th>
+                <th>Taxa/Buget</th>
+                <th>An</th>
+                
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of users" >
+        <!--first example-->
+            <td>{{item.nume}}</td>
+            <td>{{item.prenume}}</td>
+            <td>{{item.email}}</td>
+            
+            <td [ngClass]="item.medie==0 ?'danger':''">{{item.medie}}</td>
+            <td>{{item.tip}}</td>
+            <td>{{item.an}}</td>
+          
+            <td>
+              <button class="btn btn-info btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+              <button class="btn btn-danger btn-sm"><i class="fa fa-trash-o" aria-hidden="true"></i> </button>
+            </td>
+        </tr>
+
+        </tbody>
+    </table>
+

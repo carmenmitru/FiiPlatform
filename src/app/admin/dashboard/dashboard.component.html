@@ -1,0 +1,66 @@
+<nav class="navbar navbar-findcond navbar-fixed-top">
+    <div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="#">OneStudent</a>
+		</div>
+		<div class="collapse navbar-collapse" id="navbar">
+			<ul class="nav navbar-nav navbar-right">
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-fw fa-bell-o"></i> Notificari <span class="badge">{{notifications}}</span></a>
+					
+				</li>
+				<li class="active"><a href="#">Log out <span class="sr-only">(current)</span></a></li>
+				
+			</ul>
+			
+		</div>
+	</div>
+</nav>
+
+<div class="container">
+    <div class="row profile">
+		<div class="col-md-3">
+			<div class="profile-sidebar">
+				<!-- SIDEBAR USERPIC -->
+			
+				<!-- END SIDEBAR USERPIC -->
+				<!-- SIDEBAR USER TITLE -->
+				<div class="profile-usertitle">
+					<div class="profile-usertitle-name">
+						Admin
+					</div>
+				
+				</div>
+	
+				<div class="profile-usermenu">
+					<ul class="nav">
+						<li class="active">
+							<a [routerLink]="['/admin/dashboard/users']">
+							<i class="fa fa-users"></i>
+							Users </a>
+						</li>
+						<li>
+							<a [routerLink]="['/admin/news']">
+							<i class="fa fa-newspaper-o"></i>
+							Noutati </a>
+						</li>
+				
+					
+					</ul>
+				</div>
+				<!-- END MENU -->
+			</div>
+		</div>
+		<div class="col-md-9">
+            <div class="profile-content">
+			         <app-users></app-users>
+            </div>
+		</div>
+	</div>
+<router-outlet></router-outlet>
